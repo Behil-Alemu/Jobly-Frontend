@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import JoblyApi from '../api';
-import LoadingSpinner from './helpers.js/LoadingSpinner';
-import SearchBar from '../helpers.js/SearchBar';
+import LoadingSpinner from '../helpers/LoadingSpinner';
+import SearchBar from '../helpers/SearchBar';
 import CompanyCard from './CompanyCard';
 
 function CompanyList() {

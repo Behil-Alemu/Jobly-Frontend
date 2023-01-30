@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'reactstrap';
 import ProfileContext from '../ProfileContext';
 
-function NavBar() {
+function NavBar({logout}) {
 	const { currentUser } = useContext(ProfileContext);
 
 	function LoggedInNav() {
@@ -22,6 +22,10 @@ function NavBar() {
 						<NavItem>
 							{/* /profile*/}
 							<NavLink to="/profile">Profile</NavLink>
+						</NavItem>
+						<NavItem>
+							{/* /logout */}
+							<NavLink to="/logout" nClick={logout}>logout</NavLink>
 						</NavItem>
 					</Nav>
 				</Navbar>

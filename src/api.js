@@ -26,7 +26,11 @@ class JoblyApi {
         : {};
 
     try {
-      return (await axios({ url, method, data, params, headers })).data;
+      console.log(url)
+      let res = await axios({ url, method, data, params, headers })
+      
+      return res.data;
+
     } catch (err) {
       console.error("API Error:", err.response);
       let message = err.response.data.error.message;
@@ -79,6 +83,7 @@ class JoblyApi {
   /** Signup for site. */
 
   static async signup(data) {
+    console.log(data)
     let res = await this.request(`auth/register`, data, "post");
     return res.token;
   }

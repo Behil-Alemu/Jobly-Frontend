@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Homepage from '../Homepage/Home';
-import LoggedInRoutes from './LoggedInRoutes';
+import LoggedInRoutes from '../Routes/LoggedInRoutes';
 import CompanyList from '../Companies/CompanyList';
 import CompanyDetail from '../Companies/CompanyDetail';
 import JobList from '../Jobs/JobList';
@@ -28,13 +28,12 @@ function Routes({login, signup}) {
 					<JobList />
 				</LoggedInRoutes>
 
-				<LoggedInRoutes exact path="/login">
+				<Route exact path="/login">
 					<LoginForm login={login}/>
-				</LoggedInRoutes>
+				</Route>
 
-				<LoggedInRoutes exact path="/signup">
-					<NewUserForm signup={signup}/>
-				</LoggedInRoutes>
+				<Route exact path="/signup" children={<NewUserForm signup={signup}/>}/>
+				
 
 				<LoggedInRoutes exact path="/profile">
 					<EditProfile />

@@ -17,7 +17,7 @@ function LoginForm({ login }) {
 
 	/** Update form data field */
 	function handleChange(e) {
-		setFormData({ ...formData, [e.target.name]: e.target.value, id: formData.name.toLowerCase() });
+		setFormData({ ...formData, [e.target.name]: e.target.value});
 	}
 
 	return (

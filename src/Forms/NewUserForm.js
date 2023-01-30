@@ -19,7 +19,8 @@ function NewUserForm({signup}) {
 		history.push(`/home`);
 	}
 	function handleChange(e) {
-		setFormData({ ...formData, [e.target.name]: e.target.value, id: formData.name.toLowerCase() });
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+		//, id: formData.name.toLowerCase()
 	}
 	return (
 		<div>
@@ -42,7 +43,7 @@ function NewUserForm({signup}) {
 
 					<input
 						id="password"
-						type="password"
+						type="text"
 						name="password"
 						placeholder="password"
 						value={formData.password}
