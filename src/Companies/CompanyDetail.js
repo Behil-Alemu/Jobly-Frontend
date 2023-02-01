@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import JoblyApi from '../api';
-import JobList from '../Jobs/JobList';
-import LoadingSpinner from '../helpers/LoadingSpinner'
+import JobCardDetail from '../Jobs/JobCardDetail';
+import LoadingSpinner from '../helpers/LoadingSpinner';
 function CompanyDetail() {
 	const { handle } = useParams();
 
@@ -19,12 +19,26 @@ function CompanyDetail() {
 	);
 
 	if (!company) return <LoadingSpinner />;
+	console.log(company.jobs)
 
 	return (
 		<div>
 			<h4>{company.name}</h4>
-			<p>{company.desciption}</p>
-			<JobList jobs={company.jobs} />
+			<p>{company.description}</p>
+
+			<div>
+					{company.jobs.map((j) => (
+						<JobCardDetail
+							key={j.id}
+							id={j.id}
+							title={j.title}
+							salary={j.salary}
+							equity={j.equity}
+							companyName={j.companyName}
+						/>
+					))}
+				</div>
+			{/* <JobList jobs={company.jobs} /> */}
 		</div>
 	);
 }

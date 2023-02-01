@@ -25,7 +25,7 @@ function NavBar({logout}) {
 						</NavItem>
 						<NavItem>
 							{/* /logout */}
-							<NavLink to="/logout" nClick={logout}>logout</NavLink>
+							<NavLink to="/logout" onClick={logout}>logout</NavLink>
 						</NavItem>
 					</Nav>
 				</Navbar>

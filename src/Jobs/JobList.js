@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import JoblyApi from '../api';
 import SearchBar from '../helpers/SearchBar';
 import JobCardDetail from './JobCardDetail';
+import LoadingSpinner from '../helpers/LoadingSpinner';
 
 function JobList() {
 	const [ jobs, setJobs ] = useState(null);
 
-	async function getJobList(jobTitle) {
-		let jobs = JoblyApi.getJobs(jobTitle);
+	useEffect(function getAllJobsOnMount() {
+		console.debug('JobList useEffect search() triggered');
+		search();
+	}, []);
+
+	/** Triggered by search form submit; reloads jobs. */
+	async function search(title) {
+		let jobs = await JoblyApi.getJobs(title);
 		setJobs(jobs);
 	}
+
+	if (!jobs) return <LoadingSpinner />;
+	console.log(jobs.length);
 	return (
-		<div>
-			<SearchBar searchFunction={getJobList} />
-			{jobs.lenght ? (
+		<div className="JobList col-md-8 offset-md-2">
+			<SearchBar searchFor={search} />
+			{jobs.length ? (
 				<div>
 					{jobs.map((j) => (
 						<JobCardDetail
@@ -27,9 +37,7 @@ function JobList() {
 					))}
 				</div>
 			) : (
-				<div>
-					<p>Search not found</p>
-				</div>
+				<p className="lead">Sorry, no results were found!</p>
 			)}
 		</div>
 	);

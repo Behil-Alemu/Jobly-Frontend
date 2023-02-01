@@ -16,6 +16,7 @@ function NewUserForm({signup}) {
 		e.preventDefault();
 		// send a post request to api and add form
         let result = await signup(formData);
+		console.log(result)
 		history.push(`/home`);
 	}
 	function handleChange(e) {
