@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'reactstrap';
 import ProfileContext from '../ProfileContext';
 
-function NavBar({ logout }) {
+function NavigationBar({ logout }) {
 	const { currentUser } = useContext(ProfileContext);
 
 	function LoggedInNav() {
@@ -75,4 +75,4 @@ function NavBar({ logout }) {
 	);
 }
 
-export default NavBar;
+export default NavigationBar;

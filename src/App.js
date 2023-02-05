@@ -3,7 +3,7 @@ import './App.css';
 import JoblyApi from '../src/api';
 import Routes from '../src/Routes/Routes';
 import LoadingSpinner from './helpers/LoadingSpinner';
-import NavBar from './Routes/NavBar';
+import NavigationBar from './Routes/NavigationBar';
 import { BrowserRouter } from 'react-router-dom';
 import ProfileContext from './ProfileContext';
 import jwt from 'jsonwebtoken';
@@ -88,7 +88,7 @@ function App() {
 		<BrowserRouter>
 			<ProfileContext.Provider value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob }}>
 				<div className="App">
-					<NavBar logout={logout} />
+					<NavigationBar logout={logout} />
 					<Routes login={login} signup={signup} />
 				</div>
 
