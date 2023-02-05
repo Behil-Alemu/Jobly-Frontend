@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button, Grid, Link } from '@mui/material';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
+import './Form.css';
 
 function LoginForm({ login }) {
 	const history = useHistory();
@@ -18,46 +21,59 @@ function LoginForm({ login }) {
 	async function handleSubmit(evt) {
 		evt.preventDefault();
 		let result = await login(formData);
-		console.log(result)
+		console.log(result);
 		history.push('/companies');
 	}
 
 	/** Update form data field */
 	function handleChange(e) {
-		setFormData({ ...formData, [e.target.name]: e.target.value});
+		setFormData({ ...formData, [e.target.name]: e.target.value });
 	}
 
 	return (
-		<div>
-			<h3>Log In</h3>
-			<div>
-				<form onSubmit={handleSubmit}>
-					<div>
-						<label>Username</label>
-						<input
-							id="username"
-							name="username"
-							value={formData.username}
-							onChange={handleChange}
-							autoComplete="username"
-							required
-						/>
-					</div>
-					<div className="form-group">
-						<label>Password</label>
-						<input
-							type="password"
-							name="password"
-							value={formData.password}
-							onChange={handleChange}
-							required
-						/>
-					</div>
+		<div className="Form">
+				<h3 className="mb-3 mt-3">Log In</h3>
+				<div>
+					<Form onSubmit={handleSubmit}>
+						<FormGroup row>
+							<Label htmlFor="username">Username:</Label>
 
-					<button onSubmit={handleSubmit}>Submit</button>
-				</form>
+							<Input
+								id="username"
+								name="username"
+								className="form-control"
+								value={formData.username}
+								onChange={handleChange}
+								autoComplete="username"
+								required
+							/>
+						</FormGroup>
+						<FormGroup row>
+							<Label htmlFor="password">Password:</Label>
+
+							<Input
+								type="password"
+								name="password"
+								className="form-control"
+								value={formData.password}
+								onChange={handleChange}
+								autoComplete="current-password"
+
+								required
+							/>
+						</FormGroup>
+
+						<Button onSubmit={handleSubmit} size="small" variant="outlined" type="submit">
+							Submit
+						</Button>
+					</Form>
+					<Grid item>
+						<Link href="/signup" variant="body2">
+							{"Don't have an account? Sign Up"}
+						</Link>
+					</Grid>
+				</div>
 			</div>
-		</div>
 	);
 }
 

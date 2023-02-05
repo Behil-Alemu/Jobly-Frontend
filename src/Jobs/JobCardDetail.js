@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import ProfileContext from '../ProfileContext';
-import { Card, Alert } from '@mui/material';
+import { Button, Card } from '@mui/material';
 
 function JobCardDetail({ id, title, salary, equity, companyName }) {
 	const { hasAppliedToJob, applyToJob } = useContext(ProfileContext);
@@ -28,17 +27,15 @@ function JobCardDetail({ id, title, salary, equity, companyName }) {
 		<Card variant="outlined">
 			<div>
 				{applied}
-				<Link to={`/jobs/${title}`}>
 					<div>
 						<h5>{title}</h5>
 
 						<p>salary {salary}</p>
 						<p>equity {equity}</p>
-						<button onClick={handleApply} disabled={applied}>
+						<Button onClick={handleApply} variant="outlined" type='submit' disabled={applied}>
 							{applied ? 'Applied' : 'Apply'}
-						</button>
+						</Button>
 					</div>
-				</Link>
 			</div>
 		</Card>
 	);

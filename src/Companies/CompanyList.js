@@ -5,6 +5,7 @@ import SearchBar from '../helpers/SearchBar';
 import CompanyCard from './CompanyCard';
 
 
+
 function CompanyList() {
 	console.debug("CompanyList");
   

@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import JoblyApi from '../api';
 import JobCardDetail from '../Jobs/JobCardDetail';
 import LoadingSpinner from '../helpers/LoadingSpinner';
+import {  List} from '@mui/material';
+
+
 function CompanyDetail() {
 	const { handle } = useParams();
 
@@ -19,14 +22,15 @@ function CompanyDetail() {
 	);
 
 	if (!company) return <LoadingSpinner />;
-	console.log(company.jobs)
+	console.log(company.jobs);
 
 	return (
-		<div>
-			<h4>{company.name}</h4>
-			<p>{company.description}</p>
+		<List >
+			<div className="CompanyDetail col-md-8 offset-md-2">
+				<h4>{company.name}</h4>
+				<p>{company.description}</p>
 
-			<div>
+				<div>
 					{company.jobs.map((j) => (
 						<JobCardDetail
 							key={j.id}
@@ -38,8 +42,9 @@ function CompanyDetail() {
 						/>
 					))}
 				</div>
-			{/* <JobList jobs={company.jobs} /> */}
-		</div>
+				{/* <JobList jobs={company.jobs} /> */}
+			</div>
+		</List>
 	);
 }
 

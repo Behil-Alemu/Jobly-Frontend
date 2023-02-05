@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
+import './Form.css';
 
-function NewUserForm({signup}) {
+function NewUserForm({ signup }) {
 	const INITIAL_STATE = {
 		username: '',
 		password: '',
@@ -15,8 +18,8 @@ function NewUserForm({signup}) {
 	async function handleSubmit(e) {
 		e.preventDefault();
 		// send a post request to api and add form
-        let result = await signup(formData);
-		console.log(result)
+		let result = await signup(formData);
+		console.log(result);
 		history.push(`/home`);
 	}
 	function handleChange(e) {
@@ -24,12 +27,13 @@ function NewUserForm({signup}) {
 		//, id: formData.name.toLowerCase()
 	}
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor="username">Username:</label>
+		<div className="Form">
+			<h3 className="mb-3 mt-3">Sign In</h3>
+			<Form onSubmit={handleSubmit}>
+				<FormGroup>
+					<Label htmlFor="username">Username:</Label>
 
-					<input
+					<Input
 						id="username"
 						type="text"
 						name="username"
@@ -38,11 +42,11 @@ function NewUserForm({signup}) {
 						onChange={handleChange}
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="password">Password:</label>
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="password">Password:</Label>
 
-					<input
+					<Input
 						id="password"
 						type="text"
 						name="password"
@@ -51,11 +55,11 @@ function NewUserForm({signup}) {
 						onChange={handleChange}
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="name">First Name:</label>
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="name">First Name:</Label>
 
-					<input
+					<Input
 						id="firstName"
 						type="text"
 						name="firstName"
@@ -64,11 +68,11 @@ function NewUserForm({signup}) {
 						onChange={handleChange}
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="lastName">Last Name:</label>
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="lastName">Last Name:</Label>
 
-					<input
+					<Input
 						id="usernalastNameme"
 						type="text"
 						name="lastName"
@@ -77,11 +81,11 @@ function NewUserForm({signup}) {
 						onChange={handleChange}
 						required
 					/>
-				</div>
-				<div>
-					<label htmlFor="name">Email:</label>
+				</FormGroup>
+				<FormGroup>
+					<Label htmlFor="name">Email:</Label>
 
-					<input
+					<Input
 						id="email"
 						type="email"
 						name="email"
@@ -90,9 +94,11 @@ function NewUserForm({signup}) {
 						onChange={handleChange}
 						required
 					/>
-				</div>
-                <button onClick={handleSubmit}>Submit</button>
-			</form>
+				</FormGroup>
+				<Button variant="outlined" onClick={handleSubmit} type="submit">
+					Submit
+				</Button>
+			</Form>
 		</div>
 	);
 }

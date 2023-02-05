@@ -1,22 +1,10 @@
 import React, { useState, useContext } from "react";
 import JoblyApi from "../api";
 import ProfileContext from "../ProfileContext";
+import {Button} from '@mui/material'
 
 
 
-/** Profile editing form.
- *
- * Displays profile form and handles changes to local form state.
- * Submitting the form calls the API to save, and triggers user reloading
- * throughout the site.
- *
- * Confirmation of a successful save is normally a simple <Alert>, but
- * you can opt-in to our fancy limited-time-display message hook,
- * `useTimedMessage`, but switching the lines below.
- *
- * Routed as /profile
- * Routes -> ProfileForm -> Alert
- */
 
 function ProfileForm() {
   const { currentUser, setCurrentUser } = useContext(ProfileContext);
@@ -41,14 +29,7 @@ function ProfileForm() {
       "saveConfirmed=", saveConfirmed,
   );
 
-  /** on form submit:
-   * - attempt save to backend & report any errors
-   * - if successful
-   *   - clear previous error messages and password
-   *   - show save-confirmed message
-   *   - set current user info throughout the site
-   */
-
+ 
   async function handleSubmit(evt) {
     evt.preventDefault();
 
@@ -96,7 +77,7 @@ function ProfileForm() {
             <form>
               <div className="form-group">
                 <label>Username</label>
-                <p className="form-control-plaintext">{formData.username}</p>
+                <p className="form-control-plaintext">Hey {formData.username}! Edit profile below.</p>
               </div>
               <div className="form-group">
                 <label>First Name</label>
@@ -148,12 +129,12 @@ function ProfileForm() {
                 </div>
                   : null}
 
-              <button
-                  className="btn btn-primary btn-block mt-4"
-                  onClick={handleSubmit}
+              <Button
+                  variant="contained"
+                  onClick={handleSubmit} type='submit'
               >
                 Save Changes
-              </button>
+              </Button>
             </form>
           </div>
         </div>

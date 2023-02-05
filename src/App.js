@@ -6,8 +6,9 @@ import LoadingSpinner from './helpers/LoadingSpinner';
 import NavBar from './Routes/NavBar';
 import { BrowserRouter } from 'react-router-dom';
 import ProfileContext from './ProfileContext';
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 import useLocalStorage from '../src/helpers/useLocalStorage';
+import Copyright from '../src/helpers/Copyright';
 //const jwt = require("jsonwebtoken");
 //import jwt from 'jwt-decode'; // import dependency
 
@@ -17,7 +18,7 @@ function App() {
 	const [ token, setToken ] = useLocalStorage(
 		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0.FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc'
 	);
-	const [applicationIds, setApplicationIds] = useState(new Set([]));
+	const [ applicationIds, setApplicationIds ] = useState(new Set([]));
 
 	useEffect(
 		function fetchUserData() {
@@ -29,7 +30,7 @@ function App() {
 
 						let currentUser = await JoblyApi.getCurrentUser(username);
 
-            // console.log("username",currentUser)
+						// console.log("username",currentUser)
 
 						setCurrentUser(currentUser);
 						setApplicationIds(new Set(currentUser.applications));
@@ -69,17 +70,17 @@ function App() {
 		setToken(null);
 	}
 
-	 /** Checks if a job has been applied for. */
-	 function hasAppliedToJob(id) {
+	/** Checks if a job has been applied for. */
+	function hasAppliedToJob(id) {
 		return applicationIds.has(id);
-	  }
-	
-	  /** Apply to a job: make API call and update set of application IDs. */
-	  function applyToJob(id) {
+	}
+
+	/** Apply to a job: make API call and update set of application IDs. */
+	function applyToJob(id) {
 		if (hasAppliedToJob(id)) return;
 		JoblyApi.applyToJob(currentUser.username, id);
-		setApplicationIds(new Set([...applicationIds, id]));
-	  }
+		setApplicationIds(new Set([ ...applicationIds, id ]));
+	}
 
 	if (!infoReceived) return <LoadingSpinner />;
 
@@ -89,6 +90,10 @@ function App() {
 				<div className="App">
 					<NavBar logout={logout} />
 					<Routes login={login} signup={signup} />
+				</div>
+
+				<div>
+					<Copyright />
 				</div>
 			</ProfileContext.Provider>
 		</BrowserRouter>

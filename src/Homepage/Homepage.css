@@ -1,0 +1,13 @@
+.Homepage {
+    /* put around the vertical center of page */
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+  }
+  /* .Homepage{
+    height: 100vh;
+    background-size: cover;
+    padding-top: 60px;
+    background-image: url("https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60");
+  }
+   */

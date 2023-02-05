@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {Button} from '@mui/material';
+import '../Forms/Form.css'
+
 
 function SearchBar({ searchFor }) {
 	const [ searchTerm, setSearchTerm ] = useState('');
@@ -14,18 +17,19 @@ function SearchBar({ searchFor }) {
 		setSearchTerm(e.target.value);
 	}
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
+		<div className="SearchForm mb-4">
+			<form className="form-inline" onSubmit={handleSubmit}>
 				<input
+				className="form-control form-control-lg flex-grow-1"
 					type="text"
 					name="searchTerm"
 					placeholder="Apple..."
 					value={searchTerm}
 					onChange={handleChange}
 				/>
-				<button type="submit" className="btn btn-lg btn-primary">
+				<Button type="submit" size="small" variant="outlined">
 					Submit
-				</button>
+				</Button>
 			</form>
 		</div>
 	);
