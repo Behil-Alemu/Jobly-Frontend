@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Form"
+  >
+    <h3
+      class="mb-3 mt-3"
+    >
+      Sign In
+    </h3>
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          class=""
+          for="username"
+        >
+          Username:
+        </label>
+        <input
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          class=""
+          for="password"
+        >
+          Password:
+        </label>
+        <input
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="password"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          class=""
+          for="name"
+        >
+          First Name:
+        </label>
+        <input
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="John Smith"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          class=""
+          for="lastName"
+        >
+          Last Name:
+        </label>
+        <input
+          class="form-control"
+          id="usernalastNameme"
+          name="lastName"
+          placeholder="Last Name"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          class=""
+          for="name"
+        >
+          Email:
+        </label>
+        <input
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          type="email"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="submit"
+      >
+        Submit
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

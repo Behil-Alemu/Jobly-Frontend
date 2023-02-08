@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Form"
+  >
+    <h3
+      class="mb-3 mt-3"
+    >
+      Log In
+    </h3>
+    <div>
+      <form
+        class=""
+      >
+        <div
+          class="row form-group"
+        >
+          <label
+            class=""
+            for="username"
+          >
+            Username:
+          </label>
+          <input
+            autocomplete="username"
+            class="form-control form-control"
+            id="username"
+            name="username"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="row form-group"
+        >
+          <label
+            class=""
+            for="password"
+          >
+            Password:
+          </label>
+          <input
+            autocomplete="current-password"
+            class="form-control form-control"
+            name="password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall css-1k23hlb-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="submit"
+        >
+          Submit
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </form>
+      <div
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <a
+          class="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineAlways css-101ca9i-MuiTypography-root-MuiLink-root"
+          href="/signup"
+        >
+          Don't have an account? Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

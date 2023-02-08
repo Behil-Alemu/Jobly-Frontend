@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with copyright 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-y1gt6f"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1vl95ex-MuiTypography-root"
+    >
+      Copyright © Jobly/2023.
+    </p>
+  </div>
+</DocumentFragment>
+`;

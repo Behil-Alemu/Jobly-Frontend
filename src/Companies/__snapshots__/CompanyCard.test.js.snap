@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with logo 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded MuiCard-root css-1v5z4dq-MuiPaper-root-MuiCard-root"
+  >
+    <div>
+      <a
+        class="CompanyCard card"
+        href="/companies/rithm"
+      >
+        <div
+          class="card-body"
+        >
+          <h6
+            class="card-title"
+          >
+            Rithm School
+          </h6>
+          <p>
+            Become an exceptional developer in 16 weeks.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot without logo 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded MuiCard-root css-1v5z4dq-MuiPaper-root-MuiCard-root"
+  >
+    <div>
+      <a
+        class="CompanyCard card"
+        href="/companies/algo"
+      >
+        <div
+          class="card-body"
+        >
+          <h6
+            class="card-title"
+          >
+            Algo School
+          </h6>
+          <p>
+            Become a mediocre developer in 160 weeks.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

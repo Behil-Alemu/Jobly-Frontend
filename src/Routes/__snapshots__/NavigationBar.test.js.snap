@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    class=" navbar navbar-expand-md nav"
+    style="background-color: white;"
+  >
+    <li
+      class="nav-item"
+    >
+      <a
+        aria-current="page"
+        class="navbar-brand active"
+        href="/"
+      >
+        Jobly
+      </a>
+    </li>
+    <div>
+      <nav
+        class="navbar"
+      >
+        <ul
+          class="nav nav-tabs"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/companies"
+            >
+              Companies
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/jobs"
+            >
+              Jobs
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/profile"
+            >
+              Profile
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/logout"
+            >
+              logout
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <ul
+    class=" navbar navbar-expand-md nav"
+    style="background-color: white;"
+  >
+    <li
+      class="nav-item"
+    >
+      <a
+        aria-current="page"
+        class="navbar-brand active"
+        href="/"
+      >
+        Jobly
+      </a>
+    </li>
+    <div>
+      <ul
+        class="ml-auto nav nav-tabs"
+      >
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link in"
+            href="/login"
+          >
+            Login
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="/signup"
+          >
+            Signup
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ul>
+</DocumentFragment>
+`;

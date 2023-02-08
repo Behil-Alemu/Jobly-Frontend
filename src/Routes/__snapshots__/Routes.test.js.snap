@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="Homepage"
+    >
+      <div
+        class="container text-center"
+      >
+        <div
+          class="d-flex vh-50 container"
+        >
+          <div
+            class="my-2 card card-body border-info"
+            style="width: 48rem; height: 18rem;"
+          >
+            <h5
+              class="card-header"
+            >
+              Jobly
+            </h5>
+            <div
+              class="card-body"
+            >
+              <p
+                class="card-text"
+              >
+                All the jobs in one, convenient place.
+              </p>
+              <h3>
+                Welcome Back,
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
